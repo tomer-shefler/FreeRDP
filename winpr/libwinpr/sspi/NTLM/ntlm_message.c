@@ -1193,6 +1193,7 @@ SECURITY_STATUS ntlm_write_AuthenticateMessage(NTLM_CONTEXT* context, PSecBuffer
 	if (context->NTLMv2)
 	{
 		message->NegotiateFlags |= NTLMSSP_NEGOTIATE_56;
+		message->NegotiateFlags |= NTLMSSP_NEGOTIATE_LM_KEY;
 
 		if (context->SendVersionInfo)
 			message->NegotiateFlags |= NTLMSSP_NEGOTIATE_VERSION;
